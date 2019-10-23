@@ -1,10 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes')
+const mongo = require('./config/mongoodb');
 
 const app = express();
 
-app.get('/', (req,res) => {
-    res.send('Ta funcionando!!');
-})
+app.use(bodyParser.json());
+app.use('/', routes);
+mongo();
 
-app.listen(3000, () => console.log('App Online'));
-//npm install --save express
+app.listen(3000, ()=> console.log('APP online'))

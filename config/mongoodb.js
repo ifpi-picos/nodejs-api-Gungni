@@ -10,7 +10,7 @@ function conectaMongoDB() {
 
     db.on('error', console.error.bind(console, 'connection error:'));
 
-    db.once('open', () => console.info('MongoDB conectado'));
+    db.once('open', () => console.info('MongoDB conectado com sucesso!'));
 }
 
 module.exports = conectaMongoDB;
