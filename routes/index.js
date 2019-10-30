@@ -1,17 +1,14 @@
-
 const express = require('express');
-const postagemRoutes = require('./postagem-routes');
+const postagensRoutes = require('./postagensRoutes');
 
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-    res.send('App ta ON k7!!')
+router.get('/', (req, res) => {
+  res.send('App Online :)');
 });
 
-router.use((req, res, next)=>{
-    console.log('Time: ', Date.now());
-    next();
-})
-router.use('/postagens', postagemRoutes)
+router.use('/postagens', postagensRoutes);
 
 module.exports = router;
+
+// Desenvolvimento de API com Node.js, Express e MongoDB.
